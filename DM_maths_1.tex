@@ -1,0 +1,104 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}  
+\usepackage[T1]{fontenc}       
+\usepackage[francais]{babel}
+\usepackage{fullpage}
+%\usepackage{euler}
+\usepackage{amsmath}
+%\usepackage{framed}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pifont}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage[a4paper]{geometry}
+\geometry{hscale=0.86,vscale=0.87,centering}
+
+\pagestyle{empty}
+
+%\newcommand{\Titre}[4]{\noindent \textsc{#1}} \hfill \textbf{\textsc{#2}}\\ #3 \hfill \emph{#4}\\  \hrule\vspace{\baselineskip}}
+
+\newcommand{\Titre}[3]{\begin{center} {\LARGE\textbf{\textsc{#1}}}\\ #2 \hfill \emph{#3} \\  \hrule\vspace{\baselineskip}\end{center}}
+
+\begin{document}
+
+
+\Titre{DM de Maths}{Asp J.Buet}{3 décembre 2013}
+\thispagestyle{plain}
+\pagestyle{plain}
+
+
+%\title{DM de Mathématiques}
+%\date{19 novembre 2013}
+%\author{Asp. J.Buet}
+%\maketitle{}
+
+
+\section{Etude de suites et de fonctions}
+Soit $x \in \mathbb{R}$.
+On considère la suite $(u_n(x))_{n\in \mathbb{N}}$ définie par $u_n(x)=\sum\limits_{k=0}^nx^k$. Il s'agit d'une suite qui dépend d'un paramètre $x$
+ mais dont les indices varient bien sur $\mathbb{N}$. On peut également voir ceci comme une suite dont chaque élément n'est plus un nombre, mais
+ une fonction de $x$. On ne prendra pas en compte dans la suite de ce sujet le côté ``fonction'' de chaque terme de la suite (pas de notion de
+ continuité ou de dérivée) mais on verra plutôt ceci comme une famille de suites composée des suites $(u_n(0))$, $(u_n(1/2))$, $(u_n(\pi))$, etc.
+\begin{enumerate}
+\item Calculez $u_1(1/2), u_2(1/2), u_1(-1), u_2(-1)$.
+\item On introduit la suite $(v_k(x))_{k \in \mathbb{N}}$ définie par $v_k(x)=x^k$
+\begin{enumerate}
+\item Quelle est la nature de la suite $(v_k(x))_{k \in \mathbb{N}}$\,? (Arithmétique, géométrique, arithmético-géométrique...)
+\item Discutez selon les valeurs de $x$ de la limite de la suite $(v_k(x))_{k \in \mathbb{N}}$.
+\item Dédusiez-en des valeurs pour lesquelles la suite $(u_n(x))_{n \in \mathbb{N}}$ ne peut pas avoir de limite finie.
+\end{enumerate}
+\item Explicitez $u_n$ en fonction de $n$ et de $x$ (sans symbole $\sum$).
+\item Pour quelles valeurs de $x$ la suite $(u_n(x))_{n\in\mathbb{N}}$ converge-t-elle\,?
+\item Soit $x \in ]-1,1[$, donnez la limite de $(u_n(x))_{n\in\mathbb{N}}$ en fonction de $x$.
+\item On pose $f(x)=\frac{1}{1-x}$. Quel est le plus grand domaine sur lequel on peut définir $f$\,? On le considérera désormais comme son
+domaine de définition.
+\item On introduit la fonction $g$ définie par :
+$$\begin{array}{ccccc}
+g ~:& ]-1,1[ & \longrightarrow & \mathbb{R} \\
+& x & \longmapsto & f(x) \\
+\end{array}$$
+On l'appelle la restriction de $f$ à $]-1,1[$. Donnez une autre expression de $g$ à l'aide d'une somme infinie (la notation $\sum\limits_{k=0}^{+\infty}$ est 
+équivalente à $\lim\limits_{n\to+\infty}\sum\limits_{k=0}^n$). Peut-on dire que cette nouvelle
+expression convient pour $f$\,? Pourquoi\,?
+\end{enumerate}
+
+\section{Autour de la convergence}
+Soit $(a_n)_{n\in\mathbb{N}}$ une suite de complexes telle que $\lim\limits_{n\to+\infty}a_n=1$
+Soit $x\in\mathbb{R}$, on considère la suite de fonctions $(f_n(x))_{n\in\mathbb{N}}$ définie par $f_n(x)=\sum\limits_{k=0}^n a_k x^k$. Il s'agit du même objet
+que celui introduit à la partie précédente, c'est une suite dont les indices varient sur $\mathbb{N}$ et qui dépend d'un paramètre $x$.
+\begin{enumerate}
+\item Montrez que la suite $(t_n(x))_{n\in\mathbb{N}}$ définie par $t_n(x)=\sum\limits_{k=0}^n \mid a_k x^k\mid$ est croissante.
+\item Montrez qu'il existe $x_0 \in \mathbb{R}$ tel que $(t_n(x_0))$ converge (on pourra montrer par exemple que $(t_n(1/2))$ converge).
+\item Pour une suite $(\alpha_n)_{n\in\mathbb{N}}$ réelle, on pose $\alpha_n^+=max(\alpha_n,0)$ et $\alpha_n^-=max(-\alpha_n,0)$. Montrez que 
+$\alpha_n=\alpha_n^+ - \alpha_n^-$ et que $\mid \alpha_n \mid = \alpha_n^++\alpha_n^-$.
+\item On considère une suite $(\alpha_k)_{k\in\mathbb{N}}$ réelle quelconque. Montrez que si 
+$(\sum\limits_{k=0}^n\mid \alpha_k\mid)_{n\in\mathbb{N}}$ converge alors  
+$(\sum\limits_{k=0}^n \alpha_k^+)_{n\in\mathbb{N}}$ et $(\sum\limits_{k=0}^n\alpha_k^-)_{n\in\mathbb{N}}$ convergent. 
+\item En déduite que si la suite  $(\sum\limits_{k=0}^n\mid \alpha_k\mid)_{n\in\mathbb{N}}$ converge alors la suite 
+$(\sum\limits_{k=0}^n \alpha_k)_{n\in\mathbb{N}}$ converge.
+\item On rappelle qu'une suite complexe $(b_n)_{n\in\mathbb{N}}$ peut s'écrire de la forme $b_n=\beta_n + i\gamma_n$ où 
+$\beta_n$ et $\gamma_n$ sont deux réels.
+Une telle suite $(b_n)_{n\in\mathbb{N}}$ converge si et seulement si les deux suites $(\beta_n)_{n\in\mathbb{N}}$ et 
+$(\gamma_n)_{n\in\mathbb{N}}$ convergent. En utilisant le résultat précédent sur les suites réelles et le fait que $|Re(b_n)|\leqslant|b_n|$
+et $|Im(b_n)|\leqslant|b_n|$, en déduire que si 
+$(\sum\limits_{k=0}^n\mid b_k\mid)_{n\in\mathbb{N}}$ converge alors la suite $(\sum\limits_{k=0}^n b_k)_{n\in\mathbb{N}}$ converge.
+\item En déduire que $(f_n(x_0))_{n\in\mathbb{N}}$  converge.
+\end{enumerate}
+
+\section{Disque de convergence}
+On reprend les notations de la partie précédente.
+\begin{enumerate}
+\item En écrivant que $\mid a_k x^k\mid=\mid a_k x_0^k\mid.\mid\frac{x}{x_0}\mid^k$, montrez que $\forall x \in \mathbb{R}, \mid x\mid < \mid x_0\mid 
+\Rightarrow (f_n(x_0))_{n\in\mathbb{N}} \text{ converge}$.
+\item De même pour $z \in \mathbb{C}$ avec $\mid z\mid < \mid x_0\mid.$
+
+On note $f(x)$ la limite de la suite $(f_n(x))_{n\in\mathbb{N}}$ quand elle existe. Le domaine de définition de $f$ correspond donc à l'ensemble des $x\in
+\mathbb{R}$ pour lesquels $(f_n(x))_{n\in\mathbb{N}}$ converge.
+
+On vient donc de montrer que l'intervalle sur lequel $f$ est définie est centré sur $0$ : si $f$ est définie en $x_0$, elle est définie pour tous les réels 
+$x$ tels que $\mid x\mid<\mid x_0 \mid$.
+\item Eclairez le problème rencontré à la question 7 de la première partie entre le domaine de définition de $f$ et celui de $g$.
+\end{enumerate}
+
+\end{document}

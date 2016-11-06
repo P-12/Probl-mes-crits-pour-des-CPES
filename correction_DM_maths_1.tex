@@ -1,0 +1,111 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}  
+\usepackage[T1]{fontenc}       
+\usepackage[francais]{babel}
+\usepackage{fullpage}
+%\usepackage{euler}
+\usepackage{amsmath}
+%\usepackage{framed}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pifont}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage[a4paper]{geometry}
+\geometry{hscale=0.83,vscale=0.87,centering}
+
+\pagestyle{empty}
+
+\newcommand{\Titre}[3]{\begin{center} {\LARGE\textbf{\textsc{#1}}}\\ #2 \hfill \emph{#3} \\  \hrule\vspace{\baselineskip}\end{center}}
+
+
+\begin{document}
+
+
+%\title{Correction du DM de Maths}
+%\date{18 novembre 2013}
+%\author{Asp. J.Buet}
+%\maketitle{}
+
+\Titre{Correction du DM de Maths}{Asp J.Buet}{3 décembre 2013}
+\thispagestyle{plain}
+\pagestyle{plain}
+
+\section{Etude de suites et de fonctions}
+\begin{enumerate}
+\item $u_1(1/2)=3/2, u_2(1/2)=7/4, u_1(-1)=0, u_2(-1)=1$.
+\item 
+\begin{enumerate}
+\item La suite $(v_k(x))_{k\in\mathbb{N}}$ est une suite géométrique de raison $x$.
+\item Une suite géométrique est convergente si sa raison est comprise dans $]-1,1]$. Donc la suite $(v_k(x))_{k\in\mathbb{N}}$ est convergente si $x\in]-1,1]$.
+Elle a pour limite $0$ si $x\in ]-1,1[$ et pour limite 1 si $x=1$.
+\item Si la suite $(v_k(x))$ ne converge pas, la suite $(u_n(x))$ ne peut pas converger. De plus, si $x=1$, la suite $(v_k(x))$ est constante égale à $1$ donc
+la suite $(u_n(x))$ tend vers $+\infty$. Finalement, la suite $(u_n(x))$ ne peut converger que si $x\in]-1,1[$. Dans le cas général, quand une suite $(w_n)$
+ s'écrit comme la somme des termes d'une autre suite $(c_n)$, la somme ne peut avoir une limite finie que si la suite $(c_n)$ tend vers $0$. Cette condition 
+n'est pas suffisante (par exemple, $\sum\limits_{k=0}^n\frac{1}{k}$ est divergente).
+\end{enumerate}
+\item La formule sur la somme des termes d'une suite géométrique nous donne, si $x\neq1$ : $u_n=\frac{v_0-v_{n+1}}{1-x}$. On a donc $u_n=\frac{1-x^{n+1}}{1-x}$.
+Si $x=1$ alors $u_n=n+1$.
+\item On a déjà vu que la suite $(u_n(x))$ ne converge pas si $x=1$. Quand $x\neq1$, il suffit de regarder la limite de $x^{n+1}$. Si celle-ci existe et 
+est finie alors $(u_n(x))$ converge. Donc $(u_n(x))$ converge si $x\in]-1,1[$.
+\item Dans ce cas, on a $\lim\limits_{n\to+\infty}u_n(x)=\frac{1}{1-x}$.
+\item Pour que $f$ soit définie il faut avoir $1-x\neq 0$. Donc le domaine de définition de $f$ est $\mathbb{R}\backslash\{1\}$.
+\item Une autre expression de $g$ est donnée par la suite étudiée précédemment $g(x)=\sum\limits_{n=0}^{+\infty}x^n$ (la somme infinie n'est qu'une autre 
+notation pour $\lim\limits_{n\to+\infty}\sum\limits_{k=0}^nx^k$). Cette nouvelle expression ne convient pas
+ pour $f$ car les domaines de définitions ne sont pas les mêmes. La nouvelle expression de $g$ n'est valable que sur $]-1,1[$ alors que $f$ est définie sur
+ tout $\mathbb{R}\backslash\{1\}$.
+\end{enumerate}
+
+\section{Autour de la convergence}
+\begin{enumerate}
+\item La suite $(t_n(x))$ est une somme de termes positifs. $t_{n+1}(x)-t_n(x)=|a_{n+1}x^{n+1}| \geqslant 0$.
+\item Montrons que $(t_n(1/2))$ converge. La suite $(a_n)$ est convergente donc bornée : $\exists M \in \mathbb{R}^+, | a_n | \leqslant M$. Donc on 
+peut majorer $t_n(x)$ par $M\cdotp\sum\limits_{k=0}^n| x^k |$. Cette suite majorante est à nouveau croissante, elle est donc plus petite que sa limite.
+$$0\leqslant t_n(1/2)\leqslant M\cdotp\sum\limits_{k=0}^n| \frac{1}{2} | ^k \leqslant 2M$$
+Donc $(t_n(1/2))$ est croissante majorée donc convergente. $x_0=1/2$ convient.
+\item On remarque d'abord que $\alpha_n^+\geqslant 0$ et $\alpha_n^-\geqslant 0$. On remarque également que $\alpha_n^+$ et $\alpha_n^-$ ne sont pas
+strictement positifs en même temps. Si $\alpha_n\geqslant 0$ alors $\alpha_n=\alpha_n^+$, sinon $\alpha_n=-\alpha_n^-$. On a donc bien
+ $\alpha_n=\alpha_n^+-\alpha_n^-$. Puisque $| \alpha_n | = -\alpha_n=\alpha_n^-$ quand $\alpha_n \leqslant 0$,
+on a bien $| \alpha_n | = \alpha_n^+ +\alpha_n^-$.
+\item On a $\sum\limits_{k=0}^n| \alpha_k|=\sum\limits_{k=0}^n\alpha_k^+ +\sum\limits_{k=0}^n\alpha_k^-$. Les deux suites $(\sum\limits_{k=0}^n\alpha_k^+)$ et
+ $(\sum\limits_{k=0}^n\alpha_k^-)$ sont croissantes positives. Donc on a $0\leqslant \sum\limits_{k=0}^n\alpha_k^+ \leqslant \sum\limits_{k=0}^n| \alpha_k |
+ \leqslant \lim\limits_{n\to+\infty}\sum\limits_{k=0}^n | \alpha_k|$. Cette limite étant un réel positif, la suite $(\sum\limits_{k=0}^n\alpha_k^+)$
+ est croissante majorée donc elle converge. Selon un raisonnement analogue, la suite $(\sum\limits_{k=0}^n\alpha_k^-)$ est croissante majorée donc convergente.
+\item $\sum\limits_{k=0}^n\alpha_k=\sum\limits_{k=0}^n\alpha_k^+-\sum\limits_{k=0}^n\alpha_k^-$. Or si $(\sum\limits_{k=0}^n| \alpha_k|)$ converge, les deux suites 
+$(\sum\limits_{k=0}^n\alpha_k^+)$ et $(\sum\limits_{k=0}^n\alpha_k^-)$ convergent. Donc la suite $(\sum\limits_{k=0}^n\alpha_k)$ converge et admet pour limite
+ la différence des deux limites des deux suites $(\sum\limits_{k=0}^n\alpha_k^+)$ et $(\sum\limits_{k=0}^n\alpha_k^-)$.
+\item $Re(b_n)=\beta_n$, alors le terme général de la suite $(\sum\limits_{k=0}^n|\beta_k|)$ est majoré par $\sum\limits_{k=0}^n|b_k|$. Or la suite 
+$(\sum\limits_{k=0}^n|\beta_k|)$ est croissante (car somme de termes positifs) et majorée par la limite (réelle) de la suite  $(\sum\limits_{k=0}^n|b_k|)$
+que l'on a supposée convergente. Donc la suite  $(\sum\limits_{k=0}^n|\beta_k|)$ converge. Selon un raisonnement analogue, on montre que
+$(\sum\limits_{k=0}^n|\gamma_k|)$ converge. On se ramène ensuite à la question précédente (ce sont des suites réelles), on a donc les suites 
+ $(\sum\limits_{k=0}^n\beta_k)$ et  $(\sum\limits_{k=0}^n\gamma_k)$ qui convergent, ce qui équivaut à dire que la suite $(\sum\limits_{k=0}^nb_k)$ converge 
+d'après la propriété rappelée dans l'énoncé.
+\item D'après les question précédentes, $(t_n(x_0))$ converge et en remplaçant $b_k$ par $a_kx^k$ dans la question précédente, on en déduit donc que 
+$(f_n(x_0))$ converge.
+\end{enumerate}
+
+\section{Disque de convergence}
+\begin{enumerate}
+\item Soit $x\in\mathbb{R}, | x|<| x_0|$. La suite $(\sum\limits_{k=0}^n| a_kx_0^k|)$ converge donc $(a_kx_0^k)$ converge 
+(et a pour limite $0$) donc elle est majorée, notons $M$ un tel majorant.
+$\sum\limits_{k=0}^n| a_kx_0^k|.|\frac{x}{x_0}|^k\leqslant M.\sum\limits_{k=0}^n| \frac{x}{x_0}|^k$.
+On reconnaît la somme d'une suite géométrique de raison $| \frac{x}{x_0}|$. Or $| x| < |x_0|$, donc la somme de la suite géométrique converge.
+La suite $(\sum\limits_{k=0}^n| a_kx^k|)$ est donc majorée par $M.\frac{1}{1-|\frac{x}{x_0}|}$ et elle est croissante (somme de termes positifs), donc elle 
+converge. Donc finalement $(t_n(x))$ converge. D'après la partie précédente, on a donc $(f_n(x))$ converge.
+\item Le raisonnement est exactement analogue pour $z \in \mathbb{C}$, on n'a utilisé à aucun moment le fait que $x$ était réel, on raisonne de la même 
+manière avec le module au lieu de la valeur absolue et la partie précédente nous permet de conclure dans le cas d'une suite complexe.
+\item Puisque la fonction $f$ de la première partie n'est pas définie en $1$, on ne peut au maximum ne trouver une somme de termes de la forme $a_kx^k$
+qui correspond à $f$ que sur 
+l'intervalle $]-1,1[$. En effet, si on trouvait une telle somme qui définissait $f$ en $-2$, d'après ce que l'on vient de montrer, elle serait définie sur
+tout l'intervalle $[-2,2]$, donc également en $1$, ce qui est impossible. En réalité, c'est même les valeurs interdites de la fonction définies sur les 
+complexes qui rentrent en jeu. En effet, si la fonction définie à l'aide de la somme existe en $1$, elle existe sur tout le disque de centre $0$ et de rayon 
+$1$ (en considérant le plan complexe). Ainsi, la fonction $x \mapsto \frac{1}{1+x^2}$ ne s'annule pas sur $\mathbb{R}$ mais s'annule en $i$. Donc si l'on 
+cherche à l'exprimer à l'aide d'une somme de termes de la forme $a_kx^k$, cette expression ne sera au mieux valable que sur l'intervalle réel $]-1,1[$ (et 
+sur le disque ouvert complexe de centre $0$ et de rayon $1$).
+
+Lorsque l'on cherche ainsi à écrire une fonction comme limite d'une somme de termes de la forme $a_kx^k$, on dit que l'on cherche à développer cette fonction
+en série entière. C'est un problème complexe car comme on vient de le voir, le domaine de définition de la somme et de la fonction ne sont pas forcément
+les mêmes. Il n'est pas non plus toujours possible d'écrire une fonction d'une telle manière.
+\end{enumerate}
+
+\end{document}

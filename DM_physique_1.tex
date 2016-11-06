@@ -1,0 +1,119 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}  
+\usepackage[T1]{fontenc}       
+\usepackage[francais]{babel}
+\usepackage{fullpage}
+%\usepackage{euler}
+\usepackage{amsmath}
+%\usepackage{framed}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pifont}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{wasysym}
+\usepackage{pstricks-add}
+\usepackage[squaren,Gray]{SIunits}
+\usepackage[a4paper]{geometry}
+\geometry{hscale=0.86,vscale=0.87,centering}
+
+
+
+\pagestyle{empty}
+
+%\newcommand{\Titre}[4]{\noindent \textsc{#1}} \hfill \textbf{\textsc{#2}}\\ #3 \hfill \emph{#4}\\  \hrule\vspace{\baselineskip}}
+
+\newcommand{\Titre}[3]{\begin{center} {\LARGE\textbf{\textsc{#1}}}\\ #2 \hfill \emph{#3} \\  \hrule\vspace{\baselineskip}\end{center}}
+
+\begin{document}
+
+\Titre{DM de Physique}{Asp J.Buet}{3 décembre 2013}
+\thispagestyle{plain}
+\pagestyle{plain}
+
+
+\part*{L'appareil photographique}
+
+\bigskip
+\section{Optique d'un appareil photo}
+
+L'objectif d'un appareil photo est modélisé par une lentille mince convergente de distance focale $f'_{obj}$, accolée à un diaphragrame circulaire
+de diamètre $D$. Les axes de la lentille et du diaphragme sont confondus.
+
+\begin{figure}[h!]
+\center
+\includegraphics[scale=0.55]{appareil_photo.png}
+\end{figure}
+La lentille est utilisée dans les conditions de Gauss.
+
+On modélise la pellicule par une matrice de photorécepteurs carrés de côté $\varepsilon$, chacun de ces carrés correspondant à un pixel.
+
+Pour qu'un objet soit perçu net, il faut que l'image d'un point soit comprise à l'intérieur du récepteur carré, même si cette image n'est pas ponctuelle.
+\begin{enumerate}
+\item Enoncer les conditions de Gauss.
+\item La mise au point étant faite à l'infini, quelle est la distance entre l'objectif et le plan de la pellicule\,?
+\smallskip
+\item \textbf{Pouvoir de résolution}
+
+Pour deux objets à l'infini (on règle l'appareil photo convenablement), quel est l'angle minimum entre ces deux objets pour qu'ils soient perçus 
+distinctement sur la photo\,?
+\smallskip
+\item \textbf{Profondeur de champ}
+
+En fonction de la résolution (de la taille des pixels) de la pellicule, il y a une plage de distances objet-objectif pour lesquelles l'image apparaît nette
+sur la pellicule. La longueur de cette plage est appelée profondeur de champ.
+
+Pour un $\varepsilon$ donné, une focale $f'_{obj}$ et une distance $L$ entre l'objectif et la pellicule, donner la distance à laquelle se 
+situe un objet dont l'image est réellement ponctuelle sur le plan de la pellicule, puis la profondeur de champ.
+\item Pour une focale $f'_{obj}=\unit{50}{\milli\meter}$, quelle est la distance minimale théorique entre l'objet pris en photo et l'objectif\,? Sachant qu'au 
+maximum il est possible d'avancer l'objectif de $\unit{5}{\milli\meter}$ par rapport à la pellicule, quelle est la distance minimale à laquelle il est 
+réellement possible de prendre une photo (on considérera que l'objet doit être parfaitement net)\,?
+\item La tache centrale de diffraction donnée par une ouverture circulaire de dimaètre $D$ a pour rayon angulaire $\alpha=\frac{1,22\lambda}{D}$. Quelle
+condition doit respecter le nombre d'ouverture $N=\frac{f'_{obj}}{D}$ d'un objectif de $\unit{50}{\milli\meter}$ de focale pour que la netteté ne soit pas 
+limité par la diffraction\,? Faire l'application numérique pour $\varepsilon=\unit{30}{\micro\meter}$ et $\lambda=\unit{0,6}{\micro\meter}$.
+\end{enumerate}
+\pagebreak
+\section{Développement des photographies}
+
+Une pellicule photographique est recouverte d'une gélatine contenant des cristaux ioniques $AgBr$. Lorsque la lumière vient frapper la pellicule, elle arrache
+des électrons aux ions bromures et ceux-ci sont captés par les ions argents. Il se forme donc des atomes d'argent solide (qui noircissent à la lumière).
+
+Le but du développement est d'accélérer cette réaction pour les cristaux qui ont déjà partiellement réagit (en effet, après la très brève exposition, 
+l'image n'est pas encore visible sur la pellicule), pour obtenir le négatif.
+
+Pour procéder au développement photographique d'un film noir et blanc, on utilise un révélateur qui contient, entre autres, les composés suivants : de 
+l'hydroquinone ($C_6H_6O_2$), du carbonate de potassium ($K^+,CO_3^{2-}$), du bromure de potassium ($K^+,Br^-$), du sulfite de sodium ($Na_2SO_3$) et de l'eau.
+
+\begin{enumerate}
+\item On considère que le $pH$ du révélateur est imposé par l'ion carbonate $CO_3^{2-}$. On donne pour le couple $HCO_3^-/CO_3^{2-}$ $K_a=6,4.10^{-11}$.
+\begin{enumerate}
+\item Ecrire la réaction de l'ion carbonate avec l'eau.
+\item Calculer le $pH$ du révélateur en ne faisant intervenir que cette réaction (on néglique l'hydrolyse de l'ion hydrogénocarbonate).
+\item Pouvait-on approximativement prévoir cette valeur de pH sachant que l'ion $CO_3^{2-}$ est majoritaire dans la solution de révélateur\,? 
+Justifier votre réponse en traçant le diagramme de prédominance des ions pour le couple $HCO_3^-/CO_3^{2-}$
+\end{enumerate}
+\item Le réducteur utilisé dans le révélateur est l'hydroquinone $(C_6H_6O_2)$
+\begin{enumerate}
+\item Ecrire les demi-équations d'oxydo-réduction des couples $Ag^+/Ag$ et $C_6H_4O_2/C_6H_6O_2$.
+\item En déduire la réaction qui se produit entre le révélateur et la pellicule
+\end{enumerate}
+\item On note $K_s$ La constante d'équilibre de la réaction $AgBr_{(s)} \rightleftharpoons Ag^+_{(aq)}+Br^-_{(aq)}$.
+
+On donne $pK_s=12,5$.
+
+Le révélateur contient également du bromure de potassium $(K^+_{(aq)}, Br^-_{(aq)})$.
+
+On appelle solubilité d'un solide ionique - appelé soluté - la concentration maximale de ce composé que l'on peut dissoudre dans un solvant à une température
+donnée. La solution obtenue est alors saturée. Ici on aura $s=[Ag^+]$.
+\begin{enumerate}
+\item Calculer la solubilité $s$ de AgBr dans l'eau pure.
+\item La solubilité $s'$ de AgBr dans la solution de révélateur est plus faible que $s$
+\begin{enumerate}
+\item Expliquez pourquoi.
+\item Calculez cette valeur $s'$.
+\item En déduire pourquoi le bromure de potassium présent dans le révélateur s'appelle un anti-voile.
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+
+\end{document}
